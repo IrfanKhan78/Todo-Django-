@@ -13,4 +13,4 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='C:\Users\User\Downloads\todo_gif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/q2afhKbE5S.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
