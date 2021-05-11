@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Todo Items
+                    <h3>By Irfan Mahir Khan</h3>
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <form method='POST', action="">
+        <div class="container">
+
+            <div class="field">
+                <div class="control">
+                    {% csrf_token %}
+                    {{ form.content }}
+                </div>
+            </div>
+
+            <div class="field is-grouped is-grouped-right">
+                <div class="control">
+                    <button class="button is-link">Add</button>
+                    <h2><a href="{% url 'todo:home' %}">Views Tasks</a></h2>
+                </div>
+            </div>
+        </div>
+        </form>
+
+    </section>
+    <footer class="footer">
+    </footer>
+</body>
+
+</html>
