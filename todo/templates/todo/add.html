@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
@@ -15,7 +16,6 @@
             <div class="container">
                 <h1 class="title">
                     Todo Items
-                    <h3>By Irfan Mahir Khan</h3>
                 </h1>
             </div>
         </div>
@@ -30,12 +30,8 @@
                     {{ form.content }}
                 </div>
             </div>
-
-            <div class="field is-grouped is-grouped-right">
-                <div class="control">
-                    <button class="button is-link">Add</button>
-                    <h2><a href="{% url 'todo:home' %}">Views Tasks</a></h2>
-                </div>
+                <button type="submit" class="btn btn-success btn-lg", value="Add">Add</button>
+                <button type="button" class="btn btn-primary btn-lg"><a href="{% url 'todo:home' %}" style="color: white;">Views Tasks</a></button>
             </div>
         </div>
         </form>
@@ -43,6 +39,9 @@
     </section>
     <footer class="footer">
     </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

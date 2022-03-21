@@ -7,19 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Todo Items
-                    <h3>By Irfan Mahir Khan</h3>
-                </h1>
-            </div>
-        </div>
-    </section>
+    <nav class="navbar navbar-light bg-dark">
+        <span class="navbar-brand mb-0 h1" style="color:whitesmoke; font-weight:bolder">Todo List</span>
+        <img src="https://media.istockphoto.com/vectors/checklist-with-tick-marks-in-a-flat-style-questionnaire-on-a-paper-vector-id1059266342?k=20&m=1059266342&s=612x612&w=0&h=i11u3dtU7wkJNG9_7qt7eWlqHxlMWXpyxA9j-WBwGJo=" width="60" height="60" class="d-inline-block align-top" alt="">
+      </nav>
 
     <section class="section">
         <div class="container">
@@ -27,32 +22,37 @@
             <article class="media">
                 <div class="media-content">
                     <div class="content">
-                        <a href="{% url 'todo:add'%}">Add new item</a>
+                        <button type="button" class="btn btn-primary btn-lg btn-block"><a href="{% url 'todo:add'%}" style="font-weight: bold; color: black;;">Add new item</a></button>
                     </div>
                 </div>
             </article>
-
-            <article class="media">
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            {% for entry in contents %}
-                                <strong><li>{{ entry.content }}</li></strong>
-                                <form action="/delete/{{entry.id}}/"
-                                        style= "display: inline;"
-                                        method="post">{% csrf_token %}
-                                <input type="submit" value="Delete"/>
-                              </form>
-                            {% endfor %}
-                        </p>
+            <p>
+                {% for entry in contents %}
+                <strong>
+                    <div class="card">
+                        <div class="card-body">
+                        {{ entry.content }}                                 
+                        <br><h6>{{ date }}</h6><br>
+                        <form action="/delete/{{entry.id}}/"
+                        style= "display: inline;"
+                        method="post">{% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm btn-block" value="Delete">Delete</button>
+                        </form>
                     </div>
                 </div>
-            </article>
+                <br>                                
+                </strong>
+                {% endfor %}
+            </p>
         </div>
 
     </section>
     <footer class="footer">
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -3,11 +3,18 @@ from django.shortcuts import render, redirect
 from .models import Todo
 from .forms import TodoForm
 
+import datetime
+from pytz import timezone
+
 # Create your views here.
 def home(request):
+	tz = timezone('GMT')
+	date = datetime.datetime.now(tz)
+
+	print(date.time)
 	contents = Todo.objects.all()
 
-	context = {'contents' : contents}
+	context = {'contents' : contents, 'date' : date}
 
 	return render(request, 'todo/home.html', context)
 
