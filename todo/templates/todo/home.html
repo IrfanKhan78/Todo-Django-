@@ -11,10 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-dark">
-        <span class="navbar-brand mb-0 h1" style="color:whitesmoke; font-weight:bolder">Todo List</span>
-        <img src="https://media.istockphoto.com/vectors/checklist-with-tick-marks-in-a-flat-style-questionnaire-on-a-paper-vector-id1059266342?k=20&m=1059266342&s=612x612&w=0&h=i11u3dtU7wkJNG9_7qt7eWlqHxlMWXpyxA9j-WBwGJo=" width="60" height="60" class="d-inline-block align-top" alt="">
-      </nav>
+    {%  include 'todo/navbar.html' %}
 
     <section class="section">
         <div class="container">
@@ -22,28 +19,26 @@
             <article class="media">
                 <div class="media-content">
                     <div class="content">
-                        <button type="button" class="btn btn-primary btn-lg btn-block"><a href="{% url 'todo:add'%}" style="font-weight: bold; color: black;;">Add new item</a></button>
+                        <a href="{% url 'todo:add'%}" style="font-weight: bold;color: white;"><button type="button" class="btn btn-primary btn-lg btn-block">Add new item</button></a>
                     </div>
                 </div>
-            </article>
-            <p>
+            </article><br>
+
                 {% for entry in contents %}
-                <strong>
+                <h4>
                     <div class="card">
                         <div class="card-body">
-                        {{ entry.content }}                                 
-                        <br><h6>{{ date }}</h6><br>
+                        {{ entry.content }} 
                         <form action="/delete/{{entry.id}}/"
                         style= "display: inline;"
                         method="post">{% csrf_token %}
-                        <button type="submit" class="btn btn-danger btn-sm btn-block" value="Delete">Delete</button>
-                        </form>
+                        <button type="submit" class="btn btn-danger btn-lg" value="Delete" style="float: right;">Delete</button></form>                                
+                        <p><h6 style="font-weight: lighter;"> Date Added: {{month}}/{{day}}/{{year}}</h6></p>
                     </div>
                 </div>
                 <br>                                
-                </strong>
+            </h4>
                 {% endfor %}
-            </p>
         </div>
 
     </section>

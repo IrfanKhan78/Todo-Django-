@@ -4,17 +4,19 @@ from .models import Todo
 from .forms import TodoForm
 
 import datetime
-from pytz import timezone
 
 # Create your views here.
 def home(request):
-	tz = timezone('GMT')
-	date = datetime.datetime.now(tz)
+	date = datetime.datetime.now()
+
+	month = date.month
+	year = date.year
+	day = date.day
 
 	print(date.time)
 	contents = Todo.objects.all()
 
-	context = {'contents' : contents, 'date' : date}
+	context = {'contents' : contents, 'day' : day, "month": month, "year": year}
 
 	return render(request, 'todo/home.html', context)
 
