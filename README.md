@@ -13,4 +13,4 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='[http://g.recordit.co/a8nBKQ3Gt8.gif]' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![ToDo](https://github.com/user-attachments/assets/7e08cd12-8fee-4c80-9796-f20d6271d298)
