@@ -13,5 +13,4 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://g.recordit.co/a8nBKQ3Gt8.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-![Screen Recording 2024-09-16 at 1 42 19 PM](https://github.com/user-attachments/assets/e58628d3-b1a7-47cc-84c2-24db443c99bd)
+<img src='[http://g.recordit.co/a8nBKQ3Gt8.gif](https://github.com/user-attachments/assets/e58628d3-b1a7-47cc-84c2-24db443c99bd)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
